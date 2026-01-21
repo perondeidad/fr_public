@@ -1,29 +1,25 @@
-# Hi!
+¡Hola!
+Aquí está. Básicamente, la historia de las herramientas de Farbrausch entre 2001 y 2011.
+Llevábamos una eternidad queriendo publicar todo esto de diversas formas,
+pero siempre acabábamos no haciéndolo porque decíamos: "primero tendríamos que darle una limpieza...".
 
-This is it. Pretty much a history of Farbrausch tools 2001-2011. We've been
-meaning to release all this for ages, in various forms, and always ended up
-not doing it because "we'd just have to clean it up a bit first...".
+Se acabó. Esto no está limpio. Es el material tal cual: 
+algo proviene de discos duros viejos y otra parte es reciente de varios repositorios SVN.
+Es código escrito para un montón de versiones distintas de Visual Studio. 
+Algunas partes son muy difíciles de compilar y otras muy fáciles. 
+Hay cosas que están bien estructuradas y otras que son un completo desastre.
 
-No more. This is **not** cleaned up. This is the raw deal, some from old hard
-drives, some fresh from various SVN repositories. This is code written for
-a bunch of different versions of Visual Studio. Some of it is really tricky
-to compile, some really easy. There's some nice clean stuff there, other parts
-are just a complete mess.
+El código original sin modificar (con algunas correcciones de errores) está archivado bajo la etiqueta "original",
+por si existe un interés histórico;
+pero a partir del 16 de abril de 2012, la rama principal (master) de este repositorio contiene código que compila con Visual Studio 2010 (lo cual suponemos es más útil para la gente).
+Originalmente anticipamos que hacer que todo funcionara con un compilador reciente sería difícil,
+pero resultó ser bastante sencillo y solo requirió pequeños cambios en la base del código, por lo que no tiene mucho sentido mantener las dos ramas separadas.
 
-The original unmodified code (with a few bug fixes) is archived under the
-"original" tag, in case there's historical interest, but as of April 16, 2012
-the master branch of this repository contains code that builds with Visual
-Studio 2010 (which is presumably more useful to people). We originally
-anticipated that getting everything to work with a recent compiler would
-prove difficult, but it turned out to be fairly easy and required only small
-changes to the code base, so there's little value in keeping the two branches
-separate.
+Todo esto se publica bajo una licencia BSD o se pone en el dominio público (según se indique por proyecto). 
+No es que sea probable que quieras usar la mayor parte de este código, pero si quieres hacerlo,
+no vemos razón para impedírtelo.
 
-All of this is released either under a BSD license or put in the public
-domain (stated per project). Not that you're likely to want to use most of
-this code, but if you want to, we see no reason to keep you.
-
-So what do we have in here? Here's the basic directory structure:
+Entonces, ¿qué tenemos aquí? Esta es la estructura de directorios básica:
 
 ```
   altona_wz4/           - Altona and Werkkzeug4. Our most recent code foundation and tool.
@@ -52,54 +48,43 @@ So what do we have in here? Here's the basic directory structure:
   werkkzeug3_kkrieger/  - kkrieger branch. Game mode in here might work. :)
 ```
 
-So, here's the sightseeing tips:
+Así que, aquí tienen algunos consejos para "turistear" por el código:
 
-* "ktg" is OpenKTG, a proposal for a simple but relatively powerful and
-  orthogonal subset of texture generation functions - designed around 2007.
-  This is really nice, clean code. If you want to generate textures for WebGL
-  or something like that, turning this into pixel shaders+JS code should work
-  quite well. (There's no nice editor for it, though)
-* GenThree contains a bunch of text files in German with various ideas, from
-  the Candytron timeframe - mostly written by Chaos. Interesting bit of
-  history :)
-* werkkzeug3 is a mess, but come on, debris - you know you want to... :)
-* werkkzeug3_kkrieger is from a branch called "kkrieger" in our SVN repository.
-  It's not the actual kkrieger code, and incorporates changes that were done
-  more than one year after the original kkrieger release. It was, however,
-  branched off before we started not caring about breaking kkrieger
-  compatibility when making changes. You have a better chance of building the
-  game from there than you do from the "regular" werkkzeug3 tree - though both
-  are unlikely to work.
-  If someone really wants a close-to-original werkkzeug3 kkrieger tree, it should
-  be possible to dig up something from 2004 :)
-* altona_wz4 should actually be fully functional. It has been tested and there are
-  binaries which should function as fully-featured demomaker without the need to
-  touch any code. Also it's a good foundation to write your own engine or game
-  or tool or whatever. This stuff has seen heavy duty use in several companies and
-  went through several actual QA departments. It works.
+"ktg" es OpenKTG, una propuesta para un subconjunto de funciones de generación de texturas simple pero relativamente potente y ortogonal, diseñado alrededor de 2007. Es un código muy limpio y agradable.
+Si quieres generar texturas para WebGL o algo parecido, convertir esto a pixel shaders + código JS debería funcionar bastante bien. (Eso sí, no tiene un editor amigable).
 
-Contributors (in alphabetical order):
+GenThree contiene varios archivos de texto en alemán con diversas ideas de la época de Candytron; la mayoría escritos por Chaos. Es un pedazo interesante de historia :)
 
-* Fabian "ryg" Giesen: GenThree, kkrunchy, kkrunchy_k7, ktg, lekktor, RG2,
-  werkkzeug3, werkkzeug3_kkrieger, altona, werkkzeug4
-* Sebastian "Wayfinder" Grillmaier: RG2, dopplerdefekt, ein.schlag, debris,
-  kkrieger
-* Tammo "kb" Hinrichs: V2, RG2, altona, werkkzeug4, flybye, "welcome to", easterparty
-* Thomas "fiver2" / "theunitedstatesofamerica" Mahlke: werkkzeug3, werkkzeug4,
-  debris, kkrieger.
-* Christoph "giZMo" Muetze: genthree, Candytron, RG2, flybye, "welcome to",
-  werkkzeug3, wz_mobile, debris, kkrieger.
-* Dierk "Chaos" Ohlerich: GenThree, lekktor, werkkzeug3, werkkzeug3_kkrieger,  
-  wz_mobile, altona, werkkzeug4
-* Kai "cp" Poethkow: dopplerdefekt, ein.schlag, theta.
-* Ronny Pries: debris.
-* Dennis "Exoticorn" Ranke: RG2, flybye, werkkzeug3_kkrieger.
-* Leonard "paniq" Ritter: V2, theta.
-* Bastian "Tron" Zuehlke: werkkzeug3, werkkzeug4
+werkkzeug3 es un desastre, pero vamos, es el de debris... saben que lo quieren... :)
 
-Both altona_wz5 and altona2 contain various of the stb_??? libraries from Sean
-Barret, nothings.org.
+werkkzeug3_kkrieger proviene de una rama llamada "kkrieger" de nuestro repositorio SVN. No es el código exacto de kkrieger e incorpora cambios realizados más de un año después del lanzamiento original del juego. Sin embargo, se separó en una rama antes de que dejáramos de preocuparnos por romper la compatibilidad con kkrieger al hacer cambios. Tienen más posibilidades de compilar el juego desde aquí que desde el árbol "regular" de werkkzeug3, aunque es poco probable que cualquiera de los dos funcione a la primera. Si alguien realmente quiere un árbol de werkkzeug3 cercano al original de 2004, debería ser posible desenterrar algo. :)
 
-Have fun!
-(released April 2012)
-(updated October 2014 for Altona2)
+altona_wz4 debería ser totalmente funcional. Ha sido probado y existen binarios que deberían funcionar como un "demomaker" completo sin necesidad de tocar el código. Además, es una buena base para escribir tu propio motor, juego, herramienta o lo que sea. Este material ha sido usado intensamente en varias empresas y ha pasado por departamentos de control de calidad (QA) reales. Funciona.
+
+Colaboradores (en orden alfabético):
+
+Fabian "ryg" Giesen: GenThree, kkrunchy, kkrunchy_k7, ktg, lekktor, RG2, werkkzeug3, werkkzeug3_kkrieger, altona, werkkzeug4.
+
+Sebastian "Wayfinder" Grillmaier: RG2, dopplerdefekt, ein.schlag, debris, kkrieger.
+
+Tammo "kb" Hinrichs: V2, RG2, altona, werkkzeug4, flybye, "welcome to", easterparty.
+
+Thomas "fiver2" / "theunitedstatesofamerica" Mahlke: werkkzeug3, werkkzeug4, debris, kkrieger.
+
+Christoph "giZMo" Muetze: genthree, Candytron, RG2, flybye, "welcome to", werkkzeug3, wz_mobile, debris, kkrieger.
+
+Dierk "Chaos" Ohlerich: GenThree, lekktor, werkkzeug3, werkkzeug3_kkrieger, wz_mobile, altona, werkkzeug4.
+
+Kai "cp" Poethkow: dopplerdefekt, ein.schlag, theta.
+
+Ronny Pries: debris.
+
+Dennis "Exoticorn" Ranke: RG2, flybye, werkkzeug3_kkrieger.
+
+Leonard "paniq" Ritter: V2, theta.
+
+Bastian "Tron" Zuehlke: werkkzeug3, werkkzeug4.
+
+Tanto altona_wz5 como altona2 contienen varias de las librerías stb_??? de Sean Barret (nothings.org).
+
+¡Que se diviertan! (Publicado en abril de 2012) (Actualizado en octubre de 2014 para Altona2)
